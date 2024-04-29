@@ -27,9 +27,9 @@ class ProductManager {
     }
 
     deleteProduct(idProduct) {
-        const index = this.products.findIndex(product => product.code === idProduct);
+        const index = this.products.findIndex(product => product.code === idProduct); // el findIndex se usa para encontrar el índice de un elemento en un arreglo que cumple con una determinada condición. 
         if (index !== -1) {
-            this.products.splice(index, 1);
+            this.products.splice(index, 1); // el splice es útil cuando necesitas modificar un arreglo, ya sea para eliminar elementos, agregar nuevos elementos o reemplazar elementos existentes.
             return 'Producto eliminado';
         } else {
             return 'Product not found';
@@ -40,10 +40,9 @@ class ProductManager {
 const productManager = new ProductManager("./products.json");
 productManager.addProduct('Tomate', 'Pure de tomate', '$2000', 'https', 111, []);
 productManager.addProduct('Vinagre', 'Vinagre en alcohol', '$3000', 'https', 1111, []);
-productManager.addProduct('OFF', 'Repelente de insecto', '$5000', 'https', 111, []);
 
 console.log(productManager.getProducts()); // Imprime los productos agregados
 
 const idEliminate = 111; // ID del producto a eliminar
-console.log(productManager.deleteProduct(idEliminate)); 
-console.log(productManager.getProducts()); // Imprime los productos después de eliminar
+console.log(productManager.deleteProduct(idEliminate));
+console.log(productManager.getProducts()); 

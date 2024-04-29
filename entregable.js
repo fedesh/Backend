@@ -1,7 +1,9 @@
+const fs = require('fs')
 
 class ProductMaganer {
-    constructor(){
-        this.products = [] //para decirle que arranque con un array vacio uso el this.nombre
+    path= "";
+    constructor(path){
+        this.path = path;
     }
 
     addProducts(title, description, price, thumbnail, code, stock){
@@ -25,12 +27,12 @@ class ProductMaganer {
         if(products){
             if(!products.title.includes(idProduts)) products.title.push(idProduts)
         } else console.log('this event not exist')
-            
+        
         
     }
 
     getProduts(idProduts){
-        return this.products.find((produts) => produts.id== idProduts);
+        return this.products.find((products) => products.id == idProduts);
     }
 
     getProductById(idProduts, newProducte, newTitle, newImage, newCode, newPrice) {
@@ -51,9 +53,9 @@ class ProductMaganer {
     }
 
 }
-const productMaganer =  new ProductMaganer();
-productMaganer.addProducts('Tomate', 'pure de tomate', '$2000', 'https', 1+1);
-productMaganer.addProducts('vinagre', 'vinagre en alcohol', '$3000', 'https', 1+1);
+const productMaganer =  new ProductMaganer( "./products.json");
+productMaganer.addProducts('Tomate', 'pure de tomate', '$2000', 'https',111);
+productMaganer.addProducts('vinagre', 'vinagre en alcohol', '$3000', 'https',1111);
 console.log(productMaganer.getProduts())
 
 

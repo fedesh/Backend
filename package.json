@@ -1,0 +1,27 @@
+{
+  "name": "preentrega",
+  "version": "1.0.0",
+  "main": "entregas.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon servidores.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedesh/Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fedesh/Backend/issues"
+  },
+  "homepage": "https://github.com/fedesh/Backend#readme",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

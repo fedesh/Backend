@@ -1,13 +1,11 @@
-const fs = require('fs');
-
-class ProductManager {
+export class ProductManager {
     constructor(path) {
         this.path = path;
         this.products = [];
     }
 
-    addProduct(title, description, price, thumbnail, code, stock) {
-        const product = {
+     addProduct(title, description, price, thumbnail, code, stock) {
+         const product = {
             title,
             description,
             price,
@@ -23,8 +21,9 @@ class ProductManager {
     }
 
     getProductById(idProduct) {
-        return this.products.find(product => product.code === idProduct);
+        return this.products.find(product => product.code === parseInt(idProduct));
     }
+    
 
     deleteProduct(idProduct) {
         const index = this.products.findIndex(product => product.code === idProduct); // el findIndex se usa para encontrar el índice de un elemento en un arreglo que cumple con una determinada condición. 
@@ -38,11 +37,11 @@ class ProductManager {
 }
 
 const productManager = new ProductManager("./products.json");
-productManager.addProduct('Tomate', 'Pure de tomate', '$2000', 'https', 111, []);
-productManager.addProduct('Vinagre', 'Vinagre en alcohol', '$3000', 'https', 1111, []);
+productManager.addProduct('Tomate', 'Pure de tomate', '$2000', 'https', 1, []);
+productManager.addProduct('Vinagre', 'Vinagre en alcohol', '$3000', 'https', 2, []);
 
 console.log(productManager.getProducts()); // Imprime los productos agregados
 
-const idEliminate = 111; // ID del producto a eliminar
+const idEliminate = 1; // ID del producto a eliminar
 console.log(productManager.deleteProduct(idEliminate));
 console.log(productManager.getProducts()); 
